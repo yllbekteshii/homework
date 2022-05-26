@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ProductsService } from './_helpers/products.service';
+interface Products {
+  id:number,
+  name:string,
+  price:number,
+  category:string,
+  image:string,
+}
 @Component({
   selector: 'app-user-products',
   templateUrl: './user-products.component.html',
@@ -7,9 +14,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserProductsComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private _products:ProductsService) { }
+  
+  products:Products[]=[];
   ngOnInit() {
+    this._products.getProducts().subscribe((res:any)=>{
+      console.warn(res)
+      this.products = res
+    })
   }
 
 }
