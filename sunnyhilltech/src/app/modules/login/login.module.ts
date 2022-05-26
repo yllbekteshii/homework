@@ -8,8 +8,7 @@ import { LoginRoutes } from './login.routing';
 import { RouterModule } from '@angular/router';
 import {MatButtonModule} from '@angular/material/button';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { TokenInterceptor } from 'src/app/_helpers/interceptors/token.interceptor';
-
+import { TokenInterceptor } from 'app/_helpers/interceptors/token.interceptor';
 @NgModule({
   declarations:[
     LoginComponent

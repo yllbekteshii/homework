@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'environments/environment';
 import { ProductsService } from './_helpers/products.service';
 interface Products {
   id:number,
@@ -13,8 +16,9 @@ interface Products {
   styleUrls: ['./user-products.component.css']
 })
 export class UserProductsComponent implements OnInit {
-
-  constructor(private _products:ProductsService) { }
+ 
+  apiUrl = environment.apiUrl
+  constructor(private _products:ProductsService,private _http:HttpClient,private _route:Router) { }
   
   products:Products[]=[];
   ngOnInit() {
@@ -22,6 +26,10 @@ export class UserProductsComponent implements OnInit {
       console.warn(res)
       this.products = res
     })
+  }
+  logOut(){
+    this._route.navigate(["/log-in"])
+    return this._http.post(this.apiUrl+'api/user/logout',localStorage.getItem('token'))
   }
 
 }
