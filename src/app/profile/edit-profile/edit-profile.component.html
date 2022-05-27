@@ -1,3 +1,81 @@
-<p>
-  edit-profile works!
-</p>
+<div id="app">
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a [routerLink]="['/']"  class="navbar-brand">Task</a>
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <li class="nav-item">
+        <a  [routerLink]="['/products']"  class="nav-link" routerLink="home">Products</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto" >
+       <a routerLink="/edit-profile" routerLinkActive="active"  class="nav-link">Edit profile</a>
+    </ul>
+    <ul class="navbar-nav ml-auto" >
+      <li class="nav-item">
+        <a [routerLink]="['/profile']" routerLinkActive="router-link-active" class="nav-link" routerLink="profile"></a>
+      </li>
+      <li class="nav-item">
+        <a  class="nav-link" (click)="logOut()" style="cursor: pointer;">LogOut</a>
+      </li>
+    </ul>
+  </nav>
+
+
+<div class="card-body d-grid justify-content-center">
+  <h1 class="d-flex justify-content-center">Update Data</h1>
+  <form class="mt-8"
+  [formGroup]="updateForm"
+  #registerNgForm="ngForm"
+  >
+  <!-- Name field -->
+  <mat-form-field class="w-full">
+    <mat-label>Name:</mat-label>
+    <input type="text" id="username" matInput [formControlName]="'name'">
+    <mat-error *ngIf="updateForm.get('name')?.hasError('required')">Username is required</mat-error>
+  </mat-form-field>
+  <br>
+  <!-- Email field -->
+  <mat-form-field class="w-full">
+    <mat-label>Email:</mat-label>
+    <input type="text" id="email" matInput [formControlName]="'email'">
+    <mat-error *ngIf="updateForm.get('email')?.hasError('required')">Email is required</mat-error>
+  </mat-form-field>
+  <br>
+  <!-- Password field -->
+  <mat-form-field class="w-full">
+    <mat-label>Password:</mat-label>
+    <input type="password" id="username" matInput [formControlName]="'password'">
+    <mat-error *ngIf="updateForm.get('password')?.hasError('required')">password is required</mat-error>
+  </mat-form-field>
+  <br>
+  <!-- Phone field -->
+  <mat-form-field class="w-full">
+    <mat-label>Phone:</mat-label>
+    <input type="number" id="phone" matInput [formControlName]="'phone'" > 
+    <mat-error *ngIf="updateForm.get('phone')?.hasError('required')">phone is required</mat-error>
+  </mat-form-field>
+  <br>
+  <!-- Birthday field -->
+  <mat-form-field class="w-full">
+    <mat-label>Birthday:</mat-label>
+    <input type="date" id="birthday" matInput [formControlName]="'birthday'">
+    <mat-error *ngIf="updateForm.get('birthday')?.hasError('required')">Birthday is required</mat-error>
+  </mat-form-field>
+  <br>
+  <!-- Male field -->
+    <mat-radio-group id="gender" aria-label="Select an option" [formControlName]="'gender'">
+      <mat-radio-button value="Male">Male</mat-radio-button>
+      <mat-radio-button value="Female">Female</mat-radio-button>
+    </mat-radio-group>
+    <br>
+  <!-- Address Field -->
+  <mat-form-field class="w-full">
+    <mat-label>Address:</mat-label>
+    <input type="text" id="addres" matInput [formControlName]="'addres'">
+    <mat-error *ngIf="updateForm.get('addres')?.hasError('required')">Address is required</mat-error>
+  </mat-form-field>
+  <div class="d-flex justify-content-center">
+    <button (click)="updateUser()" mat-flat-button color="primary">Update</button>
+    <p *ngIf="updated == true" style="color: green;">Updated!</p>
+  </div>
+  </form>
+</div>

@@ -7,21 +7,19 @@ import {MatInputModule} from '@angular/material/input';
 import { LoginRoutes } from './login.routing';
 import { RouterModule } from '@angular/router';
 import {MatButtonModule} from '@angular/material/button';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { TokenInterceptor } from 'app/_helpers/interceptors/token.interceptor';
 @NgModule({
   declarations:[
     LoginComponent
   ],
   imports: [
     RouterModule.forChild(LoginRoutes),
+    CommonModule,
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-  ],
-  providers: [ { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },],
+  ]
 
 })
 export class LoginModule { }

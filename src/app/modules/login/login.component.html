@@ -9,18 +9,18 @@
   <mat-form-field class="w-full">
     <mat-label>Email</mat-label>
     <input id="username" matInput [formControlName]="'username'">
-    <mat-error *ngIf="signInForm.get('username').hasError('required')">Email address is required</mat-error>
-    <mat-error *ngIf="signInForm.get('username').hasError('email')">Please enter a valid email address</mat-error>
+    <mat-error  *ngIf="signInForm.get('username')?.hasError('required')">Email address is required</mat-error>
+    <mat-error  *ngIf="signInForm.get('username')?.hasError('email')">Please enter a valid email address</mat-error>
   </mat-form-field>
   <br>
   <!-- Password Field -->
   <mat-form-field class="w-full">
   <mat-label>Password</mat-label>
   <input id="password" matInput type="password"[formControlName]="'password'"#passwordField >
-  <mat-error *ngIf="signInForm.get('password').hasError('required')">
+  <mat-error *ngIf="signInForm.get('password')?.hasError('required')">
     Password is required
   </mat-error>
-  <mat-error *ngIf="signInForm.get('password').hasError('minLength')">
+  <mat-error  role="alert" *ngIf="signInForm.get('password')?.hasError('minLength')">
     Choose a password with at least 8 characters.
   </mat-error>
   </mat-form-field>

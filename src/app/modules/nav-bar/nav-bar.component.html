@@ -18,16 +18,3 @@
         </li>
       </ul>
     </nav>
-
-
-
-    <div class="row d-flex justify-content-center">
-        <div class="card col-lg-6 " style="width: 18rem;" *ngFor="let prod of products">
-                <img class="card-img-top" src={{prod.image}} alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">name:{{prod.name}}</h5>
-                  <p class="card-text">Category:{{prod.category}}</p>
-                  <a href="#" class="btn btn-primary">Price:{{prod.price}}$</a>
-                </div>
-          </div>
-    </div>
