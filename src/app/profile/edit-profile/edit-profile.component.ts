@@ -4,14 +4,15 @@ import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'app/_helpers/auth.service';
 import { environment } from 'environments/environment';
+import { Observable } from 'rxjs';
 import { UserUpdateService } from './_helpers/user-update.service';
 
 
 
-interface User {
-  id:number,
+export interface User {
   name:string,
   email:string,
+  password:string,
   phone:string,
   birthday:string,
   gender:string,
@@ -27,7 +28,6 @@ export class EditProfileComponent implements OnInit {
   @ViewChild('updateNgForm') newUpdateNgForm!: NgForm;
 
   apiUrl= environment.apiUrl;
-  userInfo!:User;  
   updateForm!:FormGroup;
   updated:boolean=false;
 
@@ -53,27 +53,28 @@ export class EditProfileComponent implements OnInit {
     })  
 
     //Call user data from service
-    this._userUpdate.getUser().subscribe((res:any)=>{
-      this.userInfo = res
-      
+    this._userUpdate.getUser().subscribe((res:any):User[]=>{
+    
       this.updateForm.setValue({
-        name : this.userInfo.name,
-        email : this.userInfo.email,
+        name : res.name,
+        email : res.email,
         password: '',
-        phone: this.userInfo.phone,
-        birthday:this.userInfo.birthday,
-        gender:this.userInfo.gender,
-        addres: this.userInfo.addres
+        phone: res.phone,
+        birthday:res.birthday,
+        gender:res.gender,
+        addres: res.addres
       })
+      return res;
     })
   }
 
   //Update user
   updateUser(){
     this.updated = true;
-  return  this._userUpdate.updateData(this.updateForm.value);
+    return this._userUpdate.updateData(this.updateForm.value);
   }
-  
+   
+  //Destroy token and log out
   logOut(){
     return this._http.post(this.apiUrl+'api/user/logout',localStorage.getItem('token')).subscribe(res=>{
       this._auth.signOut();

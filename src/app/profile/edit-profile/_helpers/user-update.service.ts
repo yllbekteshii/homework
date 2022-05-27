@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'environments/environment';
 import { Observable } from 'rxjs';
+import { User } from '../edit-profile.component';
 
 
 
@@ -17,13 +18,14 @@ apiUrl = environment.apiUrl
 
 
 //Get current user info
-getUser(){
-return  this._http.get(this.apiUrl+"api/user")
+getUser():Observable<User[]>{
+return this._http.get<User[]>(this.apiUrl+"api/user")
 }
   //Updates User
-  updateData(data:any){
-    return this._http.post(this.apiUrl+'api/user/update/1',data).subscribe(res=>{
+  updateData(data:User){
+    return this._http.post(this.apiUrl+'api/user/update/1',data).subscribe((res:any):User[]=>{
       console.log(res)
+      return res;
     })
   }
 }

@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'app/_helpers/auth.service';
 import { environment } from 'environments/environment';
 import { ProductsService } from './_helpers/products.service';
-interface Products {
+ export interface Products {
   id:number,
   name:string,
   price:number,
@@ -23,12 +23,16 @@ export class UserProductsComponent implements OnInit {
     private _auth: AuthService) { }
   
   products:Products[]=[];
+  
   ngOnInit() {
-    this._products.getProducts().subscribe((res:any)=>{
-      console.warn(res)
+    this._products.getProducts().subscribe((res:Products[])=>{
+      console.log(res)
       this.products = res
     })
+
   }
+
+  //Destroy token and log out
   logOut(){
     return this._http.post(this.apiUrl+'api/user/logout',localStorage.getItem('token')).subscribe(res=>{
       this._auth.signOut();

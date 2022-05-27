@@ -1,0 +1,16 @@
+<div class="d-grid justify-content-center card-body ">
+  <h1 class="d-flex justify-content-center">Find account</h1>
+  <form [formGroup]="findAccountForm" #findAccountNgForm="ngForm" >
+    <mat-form-field>
+      <mat-label>
+        Find Account!
+      </mat-label>
+      <input matInput placeholder="email" id="email" [formControlName]="'email'">
+      <mat-error *ngIf="findAccountForm.get('email')?.hasError('email')">Please enter a valid email</mat-error>
+      <mat-error *ngIf="findAccountForm.get('email')?.hasError('required')">Please enter a email</mat-error>
+    </mat-form-field>
+    <div class="d-flex justify-content-center">
+      <button mat-flat-button color="primary" (click)="sendEmail()">Find</button>
+    </div>
+  </form>
+</div>

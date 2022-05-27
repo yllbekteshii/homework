@@ -9,13 +9,14 @@ export class AuthService {
 
 public _authenticated: boolean = false;
 private readonly JWT_TOKEN = 'token';
-
-
 private apiUrl = environment.apiUrl;
 errorMessage:string | undefined;
 hasLoginError:boolean=false
 
+
 constructor(private _httpClient:HttpClient) { }
+
+
 get accessToken(): string
     {
         return localStorage.getItem(this.JWT_TOKEN) ?? '';
@@ -25,6 +26,7 @@ set accessToken(token: string)
 
     localStorage.setItem(this.JWT_TOKEN, token);
 }
+
 //Login Function
 login(data:any):Observable <any>{
     return this._httpClient.post(this.apiUrl +'oauth/token',data).pipe(

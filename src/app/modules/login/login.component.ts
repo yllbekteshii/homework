@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
         grant_type   : ['password'],
         scope        : [''],
         client_id    : ['5'],
-        client_secret: ['XPMnIEbIdsXL80SEzKdU9zM8UlAgizZiEpNofWLf']
+        client_secret: ['g2w4UCgkyAbxpQgYZRtNXXBYeYSrf8m8D7NcBVgC']
       })
     }
     
@@ -45,7 +45,7 @@ this.signInForm.disable()
 //Sign in
 this._auth.login(this.signInForm.value)
 .subscribe(
-  (res)=>{
+  (res:any)=>{
     console.log(res)
     this._route.navigate(['/products'])
   }

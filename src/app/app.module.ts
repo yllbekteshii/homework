@@ -11,10 +11,9 @@ import { LoginRoutes } from './modules/login/login.routing';
 import { RouterModule } from '@angular/router';
 import { AuthService } from './_helpers/auth.service';
 import { TokenInterceptor } from './_helpers/interceptors/token.interceptor';
-import { NavBarComponent } from './modules/nav-bar/nav-bar.component';
 @NgModule({
   declarations: [			
-    AppComponent, NavBarComponent,
+    AppComponent, 
    ],
   imports: [
     BrowserModule,
