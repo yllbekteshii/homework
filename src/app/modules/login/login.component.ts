@@ -38,7 +38,7 @@ signIn():void
 {
 if (this.signInForm.invalid)
 {
-  return
+  return 
 }
 //Disable the form
 this.signInForm.disable()
@@ -48,7 +48,7 @@ this._auth.login(this.signInForm.value)
 .subscribe(
   (res)=>{
     console.log(res)
-    this._route.navigate(['/home'])
+    this._route.navigate(['/products'])
   }
 )
 }
