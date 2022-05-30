@@ -25,8 +25,8 @@ export class LoginComponent implements OnInit {
         password     : ['', [Validators.required, Validators.minLength(8)]],
         grant_type   : ['password'],
         scope        : [''],
-        client_id    : ['5'],
-        client_secret: ['g2w4UCgkyAbxpQgYZRtNXXBYeYSrf8m8D7NcBVgC']
+        client_id    : ['3'],
+        client_secret: ['07ByqMm344prytYz6ImTkNMvOQLkcCobvqmkDaQW']
       })
     }
     

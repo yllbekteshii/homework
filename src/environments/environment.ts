@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://ylli.devjunes.com/'
+  apiUrl: 'http://ylli.devtaktika.com/'
 };
 
 /*
