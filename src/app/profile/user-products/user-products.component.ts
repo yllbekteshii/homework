@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'app/_helpers/auth.service';
-import { environment } from 'environments/environment';
+import { environment } from 'environments/environment.prod';
 import { ProductsService } from './_helpers/products.service';
  export interface Products {
   id:number,

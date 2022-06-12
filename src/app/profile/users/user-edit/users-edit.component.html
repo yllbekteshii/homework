@@ -1,0 +1,29 @@
+<div class="container mt-4">
+  <h3>{{header}}</h3>
+
+  <form (submit)="saveUser(UserForm.value)" #UserForm="ngForm">
+    <div class="form-group">
+      <label for="">Id</label>
+      <input type="text" class="form-control" ([ngModel])="user.id"  #id="ngModel" ngModel name="id">
+    </div>
+    <div class="form-group">
+      <label for="">Name</label>
+      <input type="text" class="form-control" ([ngModel])="user.name" #name="ngModel" ngModel name="name">
+    </div>
+    <div class="form-group">
+      <label for="">Email</label>
+      <input type="text" class="form-control" ([ngModel])="user.email" #email="ngModel" ngModel name="email">
+    </div>
+    <div class="form-group">
+      <label for="">Phone</label>
+      <input type="text" class="form-control" ([ngModel])="user.phone" #phone="ngModel" ngModel name="phone">
+    </div>
+    <div class="form-group">
+      <label for="">Salary</label>
+      <input type="text" class="form-control" ([ngModel])="user.salary" #salary="ngModel" ngModel name="salary">
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit">Save</button>
+    </div>
+  </form>
+</div>

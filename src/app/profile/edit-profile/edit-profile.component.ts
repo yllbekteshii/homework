@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'app/_helpers/auth.service';
-import { environment } from 'environments/environment';
+import { environment } from 'environments/environment.prod';
 import { Observable } from 'rxjs';
 import { UserUpdateService } from './_helpers/user-update.service';
 

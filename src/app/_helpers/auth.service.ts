@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs';
-import { environment } from 'environments/environment';
+import { environment } from 'environments/environment.prod';
 import { AuthUtils } from './auth.utils';
 @Injectable()
 export class AuthService {
@@ -34,7 +34,6 @@ login(data:any):Observable <any>{
            //Save token in localstroage
            this._authenticated = true
            this.accessToken = response.access_token
-            
            return response;
     
         })

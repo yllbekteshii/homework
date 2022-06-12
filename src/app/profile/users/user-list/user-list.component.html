@@ -1,0 +1,47 @@
+<div id="app">
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a [routerLink]="['/']"  class="navbar-brand">Task</a>
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <li class="nav-item">
+        <a  [routerLink]="['/products']"  class="nav-link" routerLink="home">Products</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto" >
+       <a routerLink="/edit-profile" routerLinkActive="active"  class="nav-link">Edit profile</a>
+    </ul>
+    <ul class="navbar-nav ml-auto" >
+      <li class="nav-item">
+        <a [routerLink]="['/profile']" routerLinkActive="router-link-active" class="nav-link" routerLink="profile"></a>
+      </li>
+      <li class="nav-item">
+        <a  class="nav-link" (click)="logOut()" style="cursor: pointer;">LogOut</a>
+      </li>
+    </ul>
+  </nav>
+
+
+
+<div class="container mt-4">
+  <h3>Users</h3>
+<a routerLink="add/0" class="btn btn-primary mt-3 mb-3">Add User</a>
+  <table class="table">
+    <thead>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Salary</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of usersData ">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.phone}}</td>
+        <td>{{user.salary}}</td>
+        <td><a [routerLink]="['edit',user.id]">Edit</a></td>
+        <td><button class="btn btn-danger" (click)="deleteUser(user.id)">X</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
