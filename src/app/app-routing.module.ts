@@ -9,7 +9,7 @@ const routes = [
   {path:'edit-profile',loadChildren:()=> import('./profile/edit-profile/edit-profile.module').then(m=>m.EditProfileModule)},
   {path:'find-account', loadChildren:()=> import('./modules/forgot-password/find-account/find-account.module').then(m=>m.FindAccountModule)},
   {path:'change-password', loadChildren:()=> import('./modules/forgot-password/change-password/change-password.module').then(m=>m.ChangePasswordModule)},
-  {path:'user-list', loadChildren:()=>import('./profile/users/user-list/user-list.module').then(m=>m.UserListModule)},
+  {path:'user-list', loadChildren:()=>import('./profile/users/user-edit/user-list/user-list.module').then(m=>m.UserListModule)},
   {path:'user-list/edit/:id', loadChildren:()=>import('./profile/users/user-edit/users-edit.module').then(m=>m.UsersEditModule)},
   {path:'user-list/add/:id',loadChildren:()=>import('./profile/users/user-edit/users-edit.module').then(m=>m.UsersEditModule)},
  ]

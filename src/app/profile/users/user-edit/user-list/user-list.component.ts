@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { User } from 'app/models/user.model';
 import { AuthService } from 'app/_helpers/auth.service';
 import { environment } from 'environments/environment.prod';
-import { UserService } from '../_helpers/user.service';
+import { UserService } from '../../_helpers/user.service';
 
 @Component({
   selector: 'app-user-list',
@@ -13,15 +13,23 @@ import { UserService } from '../_helpers/user.service';
 })
 export class UserListComponent implements OnInit {
   apiUrl = environment.apiUrl
-  usersData!:User[];
+  usersData=this._userService.users$;
+
+
   constructor(private _userService:UserService,private _auth:AuthService,private _http:HttpClient,private _route:Router) { }
 
   ngOnInit() {
- this.usersData=this._userService.getUser();
+     this._userService.getUsers().subscribe();
+     console.log(this.usersData);
   }
+
   deleteUser(id:number){
-    this._userService.deleteUser(id);
+    console.log(id)
+    this._userService.deleteUser(id).subscribe(res=>{
+      console.log(res)
+    })
   }
+
     //Destroy token and log out
     logOut(){
       return this._http.post(this.apiUrl+'user/logout',localStorage.getItem('token')).subscribe(res=>{

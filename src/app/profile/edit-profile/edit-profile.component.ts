@@ -74,7 +74,7 @@ export class EditProfileComponent implements OnInit {
     return this._userUpdate.updateData(this.updateForm.value);
   }
    
-  //Destroy token and log out
+
   logOut(){
     return this._http.post(this.apiUrl+'api/user/logout',localStorage.getItem('token')).subscribe(res=>{
       this._auth.signOut();
@@ -84,4 +84,6 @@ export class EditProfileComponent implements OnInit {
       this._route.navigate(['/log-in'])
     })
   }
+
+
 }

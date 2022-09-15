@@ -4,6 +4,7 @@ import { UsersEditComponent } from './users-edit.component';
 import { UsersEditRoutes } from './users-edit.routing';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   imports: [
@@ -11,7 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-
+    MatRadioModule
     
   ],
   declarations: [UsersEditComponent]

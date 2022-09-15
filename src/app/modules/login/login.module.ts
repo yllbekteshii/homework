@@ -7,6 +7,8 @@ import {MatInputModule} from '@angular/material/input';
 import { LoginRoutes } from './login.routing';
 import { RouterModule } from '@angular/router';
 import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+
 @NgModule({
   declarations:[
     LoginComponent
@@ -19,6 +21,7 @@ import {MatButtonModule} from '@angular/material/button';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatCardModule,
   ]
 
 })

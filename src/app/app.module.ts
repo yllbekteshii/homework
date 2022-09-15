@@ -14,7 +14,7 @@ import { TokenInterceptor } from './_helpers/interceptors/token.interceptor';
 @NgModule({
   declarations: [			
     AppComponent, 
-   ],
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -24,6 +24,7 @@ import { TokenInterceptor } from './_helpers/interceptors/token.interceptor';
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
+    RouterModule
 
 
   ],

@@ -18,7 +18,9 @@ export class UsersEditComponent implements OnInit {
     name:'',
     phone:'',
     email:'',
-    salary:'',
+    birthday:'',
+    gender:'',
+    addres:'',
   }
   constructor(private _router:Router ,private route:ActivatedRoute,private userService:UserService) { }
 
@@ -28,18 +30,20 @@ export class UsersEditComponent implements OnInit {
     this.header = this.id === 0? 'Add User':'Edit User';
   
     if(this.id != 0){
-      this.user = this.userService.getSingleUser(this.id)
+      this.userService.getSingleUser(this.id).subscribe(data=>{
+        this.user = data
+      })
     }
 
   }
   //New User
-  saveUser(form:any){
+  saveUser(id:number,form:any){
     debugger
     //this if checks if user is 0 it redicrets to add page elese it will edit user by Id
     if(this.id === 0){
-      this.userService.newUserAdd(form)
+      this.userService.newUserAdd(form).subscribe()
     }else{
-      this.userService.updateUser(form)
+      this.userService.userUpdate(id,form).subscribe()
     }
     this._router.navigate(['/user-list'])
   }

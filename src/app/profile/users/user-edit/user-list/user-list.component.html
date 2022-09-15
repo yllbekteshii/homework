@@ -30,15 +30,19 @@
       <th scope="col">Name</th>
       <th scope="col">Email</th>
       <th scope="col">Phone</th>
-      <th scope="col">Salary</th>
+      <th scope="col">Birthday</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Addres</th>
     </thead>
     <tbody>
-      <tr *ngFor="let user of usersData ">
+      <tr *ngFor="let user of usersData | async ">
         <td>{{user.id}}</td>
         <td>{{user.name}}</td>
         <td>{{user.email}}</td>
         <td>{{user.phone}}</td>
-        <td>{{user.salary}}</td>
+        <td>{{user.birthday}}</td> 
+        <td>{{user.gender}}</td>
+        <td>{{user.addres}}</td>
         <td><a [routerLink]="['edit',user.id]">Edit</a></td>
         <td><button class="btn btn-danger" (click)="deleteUser(user.id)">X</button></td>
       </tr>

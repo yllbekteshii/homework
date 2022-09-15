@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
         grant_type   : ['password'],
         scope        : [''],
         client_id    : ['1'],
-        client_secret: ['akDXnrIjbAEEMB6hWi7VE7JQwikYBPrE4lyYetnf']
+        client_secret: ['aOCvBu79GzBusnEsdmM7zmdh2Nt0fp5K4xrVZfV1']
       })
     }
     
