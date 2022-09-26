@@ -19,6 +19,7 @@ import { ProductsService } from './_helpers/products.service';
 export class UserProductsComponent implements OnInit {
  
   apiUrl = environment.apiUrl
+  totalCount:number = 0
   constructor(private _products:ProductsService,private _http:HttpClient,private _route:Router,
     private _auth: AuthService) { }
   
@@ -28,6 +29,13 @@ export class UserProductsComponent implements OnInit {
     this._products.getProducts().subscribe((res:Products[])=>{
       console.log(res)
       this.products = res
+    })
+    this.products.forEach((a:any)=>{
+      Object.assign(a,{quantity:1,total:a.price})
+    })
+    this._products.gettProducts().subscribe(res=>{
+      this.totalCount = res.length
+      console.log(this.totalCount)
     })
 
   }
@@ -41,6 +49,10 @@ export class UserProductsComponent implements OnInit {
       this._auth.signOut();
       this._route.navigate(['/log-in'])
     })
+  }
+
+  addItemtoCart(item:any ){
+    this._products.addToCart(item);
   }
 
 }

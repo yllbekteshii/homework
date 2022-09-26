@@ -11,10 +11,15 @@ import { LoginRoutes } from './modules/login/login.routing';
 import { RouterModule } from '@angular/router';
 import { AuthService } from './_helpers/auth.service';
 import { TokenInterceptor } from './_helpers/interceptors/token.interceptor';
+import { CartComponent } from './cart/cart.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+
 @NgModule({
-  declarations: [			
-    AppComponent, 
-  ],
+  declarations: [				
+    AppComponent,
+      CartComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -24,7 +29,9 @@ import { TokenInterceptor } from './_helpers/interceptors/token.interceptor';
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    RouterModule
+    RouterModule,
+    MatButtonModule,
+    MatIconModule
 
 
   ],

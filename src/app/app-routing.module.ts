@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CartComponent } from './cart/cart.component';
+import { NoAuthGuard } from './_helpers/_guards/no-auth.guard';
 
 const routes = [
   { path: '', redirectTo: 'products', pathMatch: 'full' },
+  {path:'cart',component:CartComponent,canActivate:[NoAuthGuard]},
   {path:'log-in', loadChildren:() => import('./modules/login/login.module').then(m=> m.LoginModule)},
   {path:'sign-up', loadChildren:()=> import('./modules/signup/signup.module').then(m=>m.SignupModule)},
   {path:'products',loadChildren:()=> import('./profile/user-products/user-products.module').then(m=>m.UserProductsModule)},

@@ -18,6 +18,7 @@ export class UsersEditComponent implements OnInit {
     name:'',
     phone:'',
     email:'',
+    password:'',
     birthday:'',
     gender:'',
     addres:'',

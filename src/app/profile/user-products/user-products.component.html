@@ -23,6 +23,15 @@
           <a  class="nav-link" (click)="logOut()" style="cursor: pointer;">LogOut</a>
         </li>
       </ul>
+      <li style="margin-left:70rem ;" class="pt-2">
+        <button mat-raised-button routerLink="/cart" >
+          <mat-icon mat-raised-button color="primary"
+          matBadge={{totalCount}} matBadgePosition="before" matBadgeColor="accent">
+          shopping_cart
+      </mat-icon>
+        </button>
+
+      </li>
     </nav>
 
 
@@ -33,7 +42,8 @@
                 <div class="card-body">
                   <h5 class="card-title">Name:{{prod.name}}</h5>
                   <p class="card-text">Category:{{prod.category}}</p>
-                  <a href="#" class="btn btn-primary">Price:{{prod.price}}$</a>
+                  <a href="#"  class="btn "></a>
+                  <button mat-button color="primary" (click)="addItemtoCart(prod)" >Add to cart</button>
                 </div>
           </div>
     </div>

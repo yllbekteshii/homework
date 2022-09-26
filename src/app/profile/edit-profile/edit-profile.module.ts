@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { EditProfileRoutingModule } from './edit-profile-routing.module';
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
   imports: [
     RouterModule.forChild(EditProfileRoutingModule),
@@ -19,6 +20,7 @@ import { EditProfileRoutingModule } from './edit-profile-routing.module';
     FormsModule,
     ReactiveFormsModule,
     MatRadioModule,  
+    MatCardModule
   ],
   declarations: [EditProfileComponent]
 })

@@ -25,62 +25,67 @@
   </nav>
 
 
-<div class="card-body d-grid justify-content-center">
-  <h1 class="d-flex justify-content-center">Update Data</h1>
-  <form class="mt-8"
-  [formGroup]="updateForm"
-  #registerNgForm="ngForm"
-  >
-  <!-- Name field -->
-  <mat-form-field class="w-full">
+
+
+
+
+
+<mat-card style="margin: 100px 0px;" class="contenti">
+
+<mat-card-content>
+<form    [formGroup]="updateForm"
+#registerNgForm="ngForm" >
+<p>
+  <mat-form-field>
     <mat-label>Name:</mat-label>
     <input type="text" id="username" matInput [formControlName]="'name'">
     <mat-error *ngIf="updateForm.get('name')?.hasError('required')">Username is required</mat-error>
   </mat-form-field>
-  <br>
-  <!-- Email field -->
-  <mat-form-field class="w-full">
+</p>
+
+<p>
+  <mat-form-field>
     <mat-label>Email:</mat-label>
     <input type="text" id="email" matInput [formControlName]="'email'">
     <mat-error *ngIf="updateForm.get('email')?.hasError('required')">Email is required</mat-error>
   </mat-form-field>
-  <br>
-  <!-- Password field -->
-  <mat-form-field class="w-full">
+</p>
+<p>
+  <mat-form-field>
     <mat-label>Password:</mat-label>
     <input type="password" id="username" matInput [formControlName]="'password'">
     <mat-error *ngIf="updateForm.get('password')?.hasError('required')">password is required</mat-error>
   </mat-form-field>
-  <br>
-  <!-- Phone field -->
-  <mat-form-field class="w-full">
+</p>
+
+  <p>
     <mat-label>Phone:</mat-label>
-    <input type="number" id="phone" matInput [formControlName]="'phone'" > 
-    <mat-error *ngIf="updateForm.get('phone')?.hasError('required')">phone is required</mat-error>
-  </mat-form-field>
-  <br>
-  <!-- Birthday field -->
-  <mat-form-field class="w-full">
+      <input type="number" id="phone" matInput [formControlName]="'phone'" > 
+      <mat-error *ngIf="updateForm.get('phone')?.hasError('required')">phone is required</mat-error>
+  </p>
+  <p>
     <mat-label>Birthday:</mat-label>
     <input type="date" id="birthday" matInput [formControlName]="'birthday'">
     <mat-error *ngIf="updateForm.get('birthday')?.hasError('required')">Birthday is required</mat-error>
-  </mat-form-field>
-  <br>
-  <!-- Male field -->
+  </p>
+  <p>
     <mat-radio-group id="gender" aria-label="Select an option" [formControlName]="'gender'">
       <mat-radio-button value="Male">Male</mat-radio-button>
       <mat-radio-button value="Female">Female</mat-radio-button>
     </mat-radio-group>
-    <br>
-  <!-- Address Field -->
-  <mat-form-field class="w-full">
+  </p>
+  <p>
     <mat-label>Address:</mat-label>
     <input type="text" id="addres" matInput [formControlName]="'addres'">
     <mat-error *ngIf="updateForm.get('addres')?.hasError('required')">Address is required</mat-error>
-  </mat-form-field>
+  </p>
+
+<div class="button d-flex justify-content-center">
   <div class="d-flex justify-content-center">
     <button (click)="updateUser()" mat-flat-button color="primary">Update</button>
     <p *ngIf="updated == true" style="color: green;">Updated!</p>
   </div>
-  </form>
 </div>
+</form>
+</mat-card-content>
+</mat-card>
