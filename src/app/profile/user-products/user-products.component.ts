@@ -6,9 +6,10 @@ import { environment } from 'environments/environment.prod';
 import { ProductsService } from './_helpers/products.service';
  export interface Products {
   id:number,
-  name:string,
+  title:string,
   price:number,
   category:string,
+  description:string;
   image:string,
 }
 @Component({
@@ -31,6 +32,7 @@ export class UserProductsComponent implements OnInit {
       this.products = res
     })
     this.products.forEach((a:any)=>{
+      console.warn(a)
       Object.assign(a,{quantity:1,total:a.price})
     })
     this._products.gettProducts().subscribe(res=>{

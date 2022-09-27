@@ -3,12 +3,30 @@
     margin: 25px;
     padding: 25px;
 }
+.card-title{
+    display: flex;
+    padding-top:20px ;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-weight: 600;
+    font-size: 1rem;
+}
 .center{
     position: absolute;
     top: 35%;
     left: 50%;
     transform: translate(-50%,-50%);
     text-align: center;
+}
+.center h4{
+    font-size: 1rem;
+    font-weight: 400;
+}
+.center h6{
+    font-size: 0.6rem;
+    font-weight: 400;
 }
 .center img{
     text-decoration: none;
@@ -39,3 +57,22 @@
     border-radius: 3px !important;
 
 }
+table {
+    width: 100%;
+  }
+
+  .butonat{
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+  }
+  .buttonn{
+    margin-right: 15px !important;
+  }
+  .longName{
+    white-space: nowrap; 
+    width: 50px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    margin-right: 5px;
+  }

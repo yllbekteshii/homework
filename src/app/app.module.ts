@@ -14,6 +14,10 @@ import { TokenInterceptor } from './_helpers/interceptors/token.interceptor';
 import { CartComponent } from './cart/cart.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table';
+import { CdkColumnDef } from '@angular/cdk/table';
+
+
 
 @NgModule({
   declarations: [				
@@ -31,11 +35,12 @@ import {MatIconModule} from '@angular/material/icon';
     MatFormFieldModule,
     RouterModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule
 
 
   ],
-  providers: [AuthService,{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true } ],
+  providers: [CdkColumnDef,AuthService,{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true } ],
 
   bootstrap: [AppComponent]
 })

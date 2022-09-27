@@ -40,10 +40,12 @@
         <div class="card col-3 " style="width: 18rem; margin-right: 20px;" *ngFor="let prod of products">
                 <img class="card-img-top" src={{prod.image}} alt="Card image cap">
                 <div class="card-body">
-                  <h5 class="card-title">Name:{{prod.name}}</h5>
-                  <p class="card-text">Category:{{prod.category}}</p>
+                  <h2 class="card-title">{{prod.title}}</h2>
+                  <p class="card-text">{{prod.description}}</p>
+                  <p class="card-text">{{prod.category}}</p>
+                  <strong >${{prod.price}}</strong>
                   <a href="#"  class="btn "></a>
-                  <button mat-button color="primary" (click)="addItemtoCart(prod)" >Add to cart</button>
+                  <button class="d-flex justify-content-center" mat-raised-button color="primary" (click)="addItemtoCart(prod)" >Add to cart</button>
                 </div>
           </div>
     </div>

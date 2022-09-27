@@ -33,13 +33,14 @@ addToCart(product:any)
   console.log(this.cartItemList)
 } 
 
-getTotalPrice(){
+getTotalPrice():number{
   let grandTotal = 0;
   this.cartItemList.map((a:any)=>{
     grandTotal += a.price;
     console.log(a.price)
     console.log(grandTotal)
   })
+  return grandTotal
 }
 removeCartItem(product:any){
   this.cartItemList.map((a:any,index:any)=>{
@@ -57,6 +58,6 @@ removeAll(){
 
   //Return list of the products
 getProducts():Observable<Products[]>{
-  return this._http.get<Products[]>(this.apiUrl+'api/products',)
+  return this._http.get<Products[]>('https://fakestoreapi.com/products/')
 }
 }
