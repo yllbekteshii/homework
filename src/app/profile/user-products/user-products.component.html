@@ -23,6 +23,7 @@
           <a  class="nav-link" (click)="logOut()" style="cursor: pointer;">LogOut</a>
         </li>
       </ul>
+
       <li style="margin-left:70rem ;" class="pt-2">
         <button mat-raised-button routerLink="/cart" >
           <mat-icon mat-raised-button color="primary"
@@ -30,9 +31,25 @@
           shopping_cart
       </mat-icon>
         </button>
-
       </li>
     </nav>
+
+
+    <!-- Search bar -->
+    <div class="container">
+      <div class="d-flex justify-content-center pt-4">
+        <div>
+          <mat-icon class="dearchbari"  color="primary">search</mat-icon>
+        </div>
+        <mat-form-field>
+          <mat-label  color="primary">Search a product</mat-label>
+          <input  color="primary" matInput type="text" >
+        </mat-form-field>
+      </div>
+    </div>
+
+
+
 
 
 

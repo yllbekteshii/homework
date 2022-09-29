@@ -27,17 +27,17 @@ export class UserProductsComponent implements OnInit {
   products:Products[]=[];
   
   ngOnInit() {
+    debugger
     this._products.getProducts().subscribe((res:Products[])=>{
       console.log(res)
       this.products = res
+      this.products.forEach((a:any)=>{
+        Object.assign(a,{quantity:1,total:a.price})
+      })
     })
-    this.products.forEach((a:any)=>{
-      console.warn(a)
-      Object.assign(a,{quantity:1,total:a.price})
-    })
+
     this._products.gettProducts().subscribe(res=>{
       this.totalCount = res.length
-      console.log(this.totalCount)
     })
 
   }

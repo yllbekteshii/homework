@@ -27,7 +27,12 @@
     margin-bottom: 15px;
     transition: 0.3s ease-in-out;
 }
-.card-img-top:hover{
+.card-img-top:hover{ 
     transition: 0.3s ease-in-out;
     transform: scale(1.0);
+}
+.dearchbari{
+    position: absolute;
+    top: 11%;
+    left: 44%;
 }

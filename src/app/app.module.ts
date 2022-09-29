@@ -16,13 +16,15 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
 import { CdkColumnDef } from '@angular/cdk/table';
+import { SearchPipe } from './shared/search.pipe';
 
 
 
 @NgModule({
   declarations: [				
     AppComponent,
-      CartComponent
+      CartComponent,
+      SearchPipe
    ],
   imports: [
     BrowserModule,

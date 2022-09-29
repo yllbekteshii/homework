@@ -17,9 +17,6 @@ export class CartComponent implements OnInit {
 
 
   ngOnInit() {
-    this.product.forEach((a:any)=>{
-      Object.assign(a,{quantity:1,total:a.price})
-    })
     this.cartService.gettProducts()
     .subscribe(res=>{
       console.warn(res)

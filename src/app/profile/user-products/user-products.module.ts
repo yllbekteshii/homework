@@ -6,14 +6,15 @@ import { ProfileRoutes } from './profile.routing';
 import {MatButtonModule} from '@angular/material/button';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatIconModule} from '@angular/material/icon';
-
+import {MatInputModule} from '@angular/material/input';
 @NgModule({
   imports: [
     RouterModule.forChild(ProfileRoutes),
     CommonModule,
     MatButtonModule,
     MatBadgeModule,
-    MatIconModule
+    MatIconModule,
+    MatInputModule,
   ],
   declarations: [UserProductsComponent]
 })
